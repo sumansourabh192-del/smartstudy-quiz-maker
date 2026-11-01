@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const generateBtn = document.getElementById('generate-btn');
     const inputSection = document.getElementById('input-section');
     const quizSection = document.getElementById('quiz-section');
+    const resultSection = document.getElementById('result-section');
     const questionContainer = document.getElementById('question-container');
-    const scoreContainer = document.getElementById('score-container');
     const finalScore = document.getElementById('final-score');
     const tryAgainBtn = document.getElementById('try-again-btn');
     const errorMessage = document.getElementById('error-message');
@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
             displayQuiz();
             inputSection.classList.add('hidden');
             quizSection.classList.remove('hidden');
+            resultSection.classList.add('hidden');
             
         } catch (error) {
             console.error('Error generating quiz:', error);
@@ -125,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Check if all questions answered
         if (userAnswers.every(answer => answer !== null)) {
-            setTimeout(showScore, 1000);
+            setTimeout(showScore, 500);
         }
     }
 
@@ -137,13 +138,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const percentage = Math.round((correctCount / currentQuiz.length) * 100);
         
         finalScore.textContent = `You scored ${correctCount}/${currentQuiz.length} (${percentage}%)`;
-        scoreContainer.classList.remove('hidden');
+        quizSection.classList.add('hidden');
+        resultSection.classList.remove('hidden');
     }
 
     function resetQuiz() {
         inputSection.classList.remove('hidden');
         quizSection.classList.add('hidden');
-        scoreContainer.classList.add('hidden');
+        resultSection.classList.add('hidden');
         hideError();
         notesTextarea.value = '';
         currentQuiz = [];

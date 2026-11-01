@@ -190,6 +190,11 @@ main {
     background: #f8f9fa;
     border-radius: 10px;
     margin-top: 20px;
+    display: block;
+}
+
+.score-container.hidden {
+    display: none !important;
 }
 
 .score-container h2 {
