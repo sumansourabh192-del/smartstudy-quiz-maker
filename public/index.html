@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartStudy Quiz Maker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🧠 SmartStudy Quiz Maker</h1>
+            <p>Turn your notes into instant quizzes</p>
+        </header>
+
+        <main>
+            <section id="input-section" class="active">
+                <div class="input-area">
+                    <label for="notes">Paste your study notes:</label>
+                    <textarea id="notes" placeholder="Type or paste your study notes here..."></textarea>
+                    <button id="generate-btn" class="btn-primary" type="button">Generate Quiz</button>
+                    <div id="error-message" class="error hidden"></div>
+                </div>
+            </section>
+
+            <section id="quiz-section" class="hidden">
+                <div class="quiz-container">
+                    <div id="question-container">
+                        <!-- Questions will be inserted here -->
+                    </div>
+                    <div id="score-container" class="score-container hidden">
+                        <h2>Quiz Complete!</h2>
+                        <p id="final-score"></p>
+                        <button id="try-again-btn" class="btn-secondary">Try Again</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Made with ❤️ for Global AI Hackathon</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
